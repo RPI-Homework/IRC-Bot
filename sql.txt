@@ -1,0 +1,311 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jul 30, 2008 at 09:21 AM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `loby_bot`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot`
+--
+
+CREATE TABLE `bot` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `on` tinyint(1) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `bot`
+--
+
+INSERT INTO `bot` VALUES(1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_access`
+--
+
+CREATE TABLE `bot_access` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `host` varchar(255) default NULL,
+  `level` smallint(2) NOT NULL default '1',
+  `channel` varchar(255) NOT NULL,
+  `server` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+
+--
+-- Dumping data for table `bot_access`
+--
+
+INSERT INTO `bot_access` VALUES(5, 'fuqinfruit', NULL, 3, '#Kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(7, 'luda', 'luda@desu-E62D266C.se.biz.rr.com', 10, '#darknesslight', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(19, 'tyrian', NULL, 3, '#Kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(13, 'RickRollington', NULL, 7, '#insurgency', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(14, 'fuqinfruit', NULL, 7, '#insurgency', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(27, 'ecb', NULL, 7, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(28, 'Pedrobear', NULL, 6, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(29, 'Pedro', NULL, 6, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(30, 'murdoc', NULL, 5, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(31, 'luda', NULL, 2, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(32, 'jamiehd', NULL, 2, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(33, 'dart27', NULL, 2, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(34, 'legion', NULL, 2, '#kriegchan', 'irc.partyvan.fm');
+INSERT INTO `bot_access` VALUES(35, 'hitlerchan', NULL, 2, '#kriegchan', 'irc.partyvan.fm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_banlist`
+--
+
+CREATE TABLE `bot_banlist` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `channel` varchar(255) NOT NULL,
+  `server` varchar(255) NOT NULL,
+  `time` int(10) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `bot_banlist`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_global_access`
+--
+
+CREATE TABLE `bot_global_access` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `host` varchar(255) default NULL,
+  `level` smallint(2) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `bot_global_access`
+--
+
+INSERT INTO `bot_global_access` VALUES(1, 'P0rnstar', 'no@66-69-66-69.dhcp.ne.on.nimp.org', 10);
+INSERT INTO `bot_global_access` VALUES(2, 'Loby_The_Pirate', 'no@68-118-236-181.dhcp.oxfr.ma.charter.com', 10);
+INSERT INTO `bot_global_access` VALUES(3, 'Avenger', 'Soval@desu-NX09.sol3.te', 10);
+INSERT INTO `bot_global_access` VALUES(9, 'januszeal', NULL, 8);
+INSERT INTO `bot_global_access` VALUES(10, 'lulbat', 'Resist@nce.Is.Futile', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_join`
+--
+
+CREATE TABLE `bot_join` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `channel` varchar(255) NOT NULL,
+  `server` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `bot_join`
+--
+
+INSERT INTO `bot_join` VALUES(3, 'P0rnstar', '#Kriegchan', 'irc.partyvan.fm', 'It is the all mighty P0rnstar, all will bow before his will!');
+INSERT INTO `bot_join` VALUES(4, 'Loby_The_Pirate', '#Kriegchan', 'irc.partyvan.fm', 'Loby_The_Pirate is here to kick some ass!');
+INSERT INTO `bot_join` VALUES(6, 'Avenger', '#Kriegchan', 'irc.partyvan.fm', 'Shit, hide!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_port`
+--
+
+CREATE TABLE `bot_port` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `text` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+
+--
+-- Dumping data for table `bot_port`
+--
+
+INSERT INTO `bot_port` VALUES(1, 'USS Enterprise arriving at bay 4');
+INSERT INTO `bot_port` VALUES(2, 'Please do not use shipboard toilet facilities while in Spacedock');
+INSERT INTO `bot_port` VALUES(3, 'Commencing repairs on USS Excelsior');
+INSERT INTO `bot_port` VALUES(4, 'Commander MacTavish to the ops center');
+INSERT INTO `bot_port` VALUES(5, 'Gravity Plating on level 127 will be taken offline in 20 minutes. Please find something to hold on to');
+INSERT INTO `bot_port` VALUES(6, 'Distress call from the Romulan Warbird Valdore, redirecting to the give-a-shit-o-meter');
+INSERT INTO `bot_port` VALUES(7, 'Explosion detected on level 63, reports of redshirt casualties');
+INSERT INTO `bot_port` VALUES(8, 'Tribble infestation in the Engineering levels, communications hardware significantly damsfdghfdhjakdsgkhurrrrrrrrr');
+INSERT INTO `bot_port` VALUES(9, 'On second thought let''s not go to Camelot, it is a silly place');
+INSERT INTO `bot_port` VALUES(10, 'Red Alert, all hands to bobble stations');
+INSERT INTO `bot_port` VALUES(11, 'What');
+INSERT INTO `bot_port` VALUES(12, 'Commence saucer separation. I don''t care if this is a Starbase, separate it.');
+INSERT INTO `bot_port` VALUES(13, 'Set phasers to fun');
+INSERT INTO `bot_port` VALUES(14, 'Toilet paper Torpedos locked on to Klingon targets. Commence wiping.');
+INSERT INTO `bot_port` VALUES(15, 'Selfish is a queerboy');
+INSERT INTO `bot_port` VALUES(16, 'Level seventeen reports fires. Deploying smores');
+INSERT INTO `bot_port` VALUES(17, 'A shuttlecraft has impacted the hull of the USS Constitution. 3 reported dead, initiating repainting');
+INSERT INTO `bot_port` VALUES(18, 'What What in the butt');
+INSERT INTO `bot_port` VALUES(19, 'What What in the asshole');
+INSERT INTO `bot_port` VALUES(20, '<A-man> STOP ADDING MY QUOTES I DON''T WANT IT HIGHLIGHTING ME');
+INSERT INTO `bot_port` VALUES(21, '<A-man> Why is spacelog so pointless now');
+INSERT INTO `bot_port` VALUES(22, '<A-man> THAT IS WHY YOU NEVER GIVE SELFISH POWE');
+INSERT INTO `bot_port` VALUES(23, '<P0rnstar> !8ball should i make selfish level 10? : <Spacedock> P0rnstar - Of Course');
+INSERT INTO `bot_port` VALUES(24, 'Captain''s log, stardate... twenty... something. I''ve been having short term memory loss lately. With extra cheese and a side of fries, please');
+INSERT INTO `bot_port` VALUES(25, '<P0rnstar> !8ball should i make jamiehd level 10? : <Spacedock> P0rnstar - Of Course');
+INSERT INTO `bot_port` VALUES(26, '<P0rnstar> !votekick spacedock : <Spacedock> Vote Kick started Against spacedock : <P0rnstar> !8ball what should i vote : <Spacedock> P0rnstar - No');
+INSERT INTO `bot_port` VALUES(27, '<jamiehd> !8ball do you like sex in the butt? : <Spacedock> jamiehd - Of Course');
+INSERT INTO `bot_port` VALUES(28, 'FBI scoutship detected, erasing computer core');
+INSERT INTO `bot_port` VALUES(29, '<P0rnstar> !8ball does pedro have a tiny penis : <Spacedock> P0rnstar - Yes : <Mengele> !8ball will pedro ever get laid : <~Spacedock> Mengele - Don''t Make Me Laugh you Muppit!! : <Pedro> !8ball did you lie about the last question? : <Spacedock> Pedro - Don''t Count On It ');
+INSERT INTO `bot_port` VALUES(33, '<Spacedock> everyone does not exist');
+INSERT INTO `bot_port` VALUES(31, '<Pedro> !8ball would you like to have a penis as tiny as P0rnstar''s? : <Spacedock> Pedro - No : <P0rnstar> !8ball is that because my penis is larger than a horses : <Spacedock> P0rnstar - Yes...Its In The Stars : <Pedro> !8ball have you ever sucked P0rnstar''s penis? : <Spacedock> Pedro - For Sure');
+INSERT INTO `bot_port` VALUES(32, '<Pedro> !8ball is my penis actually large and you were trolling all the time? : <Spacedock> Pedro - No : <Pedro> !kick Spacedock ;_; : * Pedro was kicked by Spacedock (Now that was a mistake...wasnt it?)');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_quote`
+--
+
+CREATE TABLE `bot_quote` (
+  `id` int(8) NOT NULL auto_increment,
+  `added_by` varchar(20) NOT NULL,
+  `quote` text NOT NULL,
+  `time_posted` int(10) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `bot_quote`
+--
+
+INSERT INTO `bot_quote` VALUES(2, 'P0rnstar', 'LULZ!', 1214491666);
+INSERT INTO `bot_quote` VALUES(4, 'Pedrobear', '<&Spacedock> Pedrobear is actually Pedrobear', 1214518040);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_vote`
+--
+
+CREATE TABLE `bot_vote` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `channel` varchar(255) NOT NULL,
+  `server` varchar(255) NOT NULL,
+  `vote` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=185 ;
+
+--
+-- Dumping data for table `bot_vote`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_voteban`
+--
+
+CREATE TABLE `bot_voteban` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `channel` varchar(255) NOT NULL,
+  `server` varchar(255) NOT NULL,
+  `active` tinyint(1) NOT NULL default '0',
+  `yes` mediumint(4) NOT NULL default '0',
+  `no` mediumint(4) NOT NULL default '0',
+  `result` tinyint(1) NOT NULL default '0',
+  `at` int(10) NOT NULL default '0',
+  `time` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
+
+--
+-- Dumping data for table `bot_voteban`
+--
+
+INSERT INTO `bot_voteban` VALUES(20, 'ECB', 'even.cooler.beans', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1214618827, 300);
+INSERT INTO `bot_voteban` VALUES(21, 'P0rnstar', '66-69-66-69.dhcp.ne.on.nimp.org', '#Kriegchan', 'irc.partyvan.fm', 0, 3, 0, 1, 1214620343, 300);
+INSERT INTO `bot_voteban` VALUES(22, 'Avenger', '', '#Kriegchan', 'irc.partyvan.fm', 0, 2, 1, 0, 1214623457, 300);
+INSERT INTO `bot_voteban` VALUES(23, 'Avenger', 'desu-NX09.sol3.te', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 1, 0, 1214624081, 300);
+INSERT INTO `bot_voteban` VALUES(24, 'p0rnstar', '66-69-66-69.dhcp.ne.on.nimp.org', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1214624827, 300);
+INSERT INTO `bot_voteban` VALUES(25, 'spacedock', 'home.privatednsserver.com', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1214625134, 300);
+INSERT INTO `bot_voteban` VALUES(26, 'spacedock', 'home.privatednsserver.com', '#Kriegchan', 'irc.partyvan.fm', 0, 2, 0, 0, 1214625241, 300);
+INSERT INTO `bot_voteban` VALUES(27, 'spacedock', 'home.privatednsserver.com', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1214625310, 300);
+INSERT INTO `bot_voteban` VALUES(28, 'Tyrian', 'desu-A6CAC5CF.hawaii.res.rr.com', '#Kriegchan', 'irc.partyvan.fm', 0, 1, 0, 0, 1214849552, 300);
+INSERT INTO `bot_voteban` VALUES(29, 'jamiehd', 'has.a.nicer.turtle.than.core', '#Kriegchan', 'irc.partyvan.fm', 0, 3, 0, 1, 1214927646, 300);
+INSERT INTO `bot_voteban` VALUES(30, 'Spacedock', 'home.privatednsserver.com', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215005988, 300);
+INSERT INTO `bot_voteban` VALUES(31, 'P0rnstar', '66-69-66-69.dhcp.ne.on.nimp.org', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215008699, 300);
+INSERT INTO `bot_voteban` VALUES(32, 'P0rnstar', '66-69-66-69.dhcp.ne.on.nimp.org', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215008715, 300);
+INSERT INTO `bot_voteban` VALUES(33, 'Avenger', 'desu-NX09.sol3.te', '#Kriegchan', 'irc.partyvan.fm', 0, 2, 2, 0, 1215021445, 300);
+INSERT INTO `bot_voteban` VALUES(34, 'Pedro', 'pedro.br', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215048193, 300);
+INSERT INTO `bot_voteban` VALUES(35, 'P0rnstar', '66-69-66-69.dhcp.ne.on.nimp.org', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215048497, 300);
+INSERT INTO `bot_voteban` VALUES(36, 'Pedro', 'pedro.br', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215049087, 300);
+INSERT INTO `bot_voteban` VALUES(37, 'pedro', 'pedro.br', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215049674, 300);
+INSERT INTO `bot_voteban` VALUES(38, 'p0rnstar', '', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215059120, 300);
+INSERT INTO `bot_voteban` VALUES(39, 'Loby_the_Pirate', '66-69-66-69.dhcp.ne.on.nimp.org', '#Kriegchan', 'irc.partyvan.fm', 0, 3, 0, 1, 1215059220, 5);
+INSERT INTO `bot_voteban` VALUES(40, 'P0rnstar', '', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 1, 0, 1215303093, 300);
+INSERT INTO `bot_voteban` VALUES(41, 'Shaun', '', '#Kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1215310106, 300);
+INSERT INTO `bot_voteban` VALUES(42, 'januszeal', '', '#kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1217371302, 30);
+INSERT INTO `bot_voteban` VALUES(43, 'januszeal', '', '#kriegchan', 'irc.partyvan.fm', 0, 0, 1, 0, 1217373327, 30);
+INSERT INTO `bot_voteban` VALUES(44, 'hitlerchan', 'Soviet.Russia', '#kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1217373496, 600);
+INSERT INTO `bot_voteban` VALUES(45, 'hitlerchan', 'Soviet.Russia', '#kriegchan', 'irc.partyvan.fm', 0, 1, 1, 0, 1217375723, 30);
+INSERT INTO `bot_voteban` VALUES(46, 'Hitlerchan', 'Soviet.Russia', '#kriegchan', 'irc.partyvan.fm', 0, 0, 0, 0, 1217376399, 30);
+INSERT INTO `bot_voteban` VALUES(47, 'avenger', '', '#kriegchan', 'irc.partyvan.fm', 0, 2, 0, 0, 1217382280, 30);
+INSERT INTO `bot_voteban` VALUES(48, 'avenger', '', '#kriegchan', 'irc.partyvan.fm', 0, 1, 0, 0, 1217382645, 30);
+INSERT INTO `bot_voteban` VALUES(49, 'lulbat', '', '#kriegchan', 'irc.partyvan.fm', 0, 0, 0, 9, 1217385010, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bot_votekick`
+--
+
+CREATE TABLE `bot_votekick` (
+  `id` mediumint(8) NOT NULL auto_increment,
+  `user` varchar(20) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `channel` varchar(255) NOT NULL,
+  `server` varchar(255) NOT NULL,
+  `active` tinyint(1) NOT NULL default '0',
+  `yes` mediumint(4) NOT NULL default '0',
+  `no` mediumint(4) NOT NULL default '0',
+  `result` tinyint(1) NOT NULL default '0',
+  `time` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `bot_votekick`
+--
+
+INSERT INTO `bot_votekick` VALUES(16, 'Shaun', '', '#Kriegchan', 'irc.partyvan.fm', 1, 0, 0, 0, 0);
+INSERT INTO `bot_votekick` VALUES(17, 'januszeal', '', '#kriegchan', 'irc.partyvan.fm', 1, 0, 0, 0, 0);
+INSERT INTO `bot_votekick` VALUES(18, 'januszeal', '', '#kriegchan', 'irc.partyvan.fm', 1, 0, 0, 0, 0);
+INSERT INTO `bot_votekick` VALUES(19, 'lulbat', '', '#kriegchan', 'irc.partyvan.fm', 1, 0, 0, 0, 0);
